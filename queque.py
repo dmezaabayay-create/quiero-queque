@@ -13,8 +13,9 @@ try:
         fecha = ahora.strftime("%d/%m/%Y")
         hora = ahora.strftime("%H:%M:%S")
 
-        # Usamos secuencias ANSI para mover el cursor al inicio de la pantalla sin parpadear
-        print(f"\033[H--- RELOJ DIGITAL ---\nFecha: {fecha}\nHora:  {hora}", end="", flush=True)
+        # Limpiamos la pantalla en cada iteración para asegurar compatibilidad
+        limpiar_pantalla()
+        print(f"--- RELOJ DIGITAL ---\nFecha: {fecha}\nHora:  {hora}")
         
         time.sleep(1)
 
